@@ -2,7 +2,7 @@ let stream;
 let audioContext;
 let mic;
 
-const ws = new WebSocket('ws://macbook-air.local:8080'); // WebSocket server address
+const ws = new WebSocket('ws://190.20.241.158:8080'); // WebSocket server address
 
 ws.onopen = function () {
   console.log('WebSocket connection established');
