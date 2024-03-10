@@ -25,13 +25,15 @@ function startListening() {
         analyser.getByteFrequencyData(dataArray);
         let average =
           dataArray.reduce((acc, val) => acc + val, 0) / bufferLength;
-        if (average > 50) {
+        if (average > 70) {
           // Adjust threshold as needed
-          console.log('Sound detected!');
+          alert('Sound Detected');
+          // console.log('Sound detected!');
           const message = 'Sound threshold exceeded';
           ws.send(message); // Send message to WebSocket server
         }
         requestAnimationFrame(detectVolume);
+        detectVolume();
       }
 
       detectVolume();
