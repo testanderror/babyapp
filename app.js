@@ -25,7 +25,7 @@ function startListening() {
         analyser.getByteFrequencyData(dataArray);
         let average =
           dataArray.reduce((acc, val) => acc + val, 0) / bufferLength;
-        if (average > 150) {
+        if (average > 50) {
           // Adjust threshold as needed
           console.log('Sound detected!');
           const message = 'Sound threshold exceeded';
